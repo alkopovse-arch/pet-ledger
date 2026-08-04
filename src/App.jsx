@@ -1,4 +1,4 @@
-import './App.scss'
+import 'sass-reset';
 
 function App() {
 
