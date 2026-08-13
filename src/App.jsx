@@ -1,11 +1,13 @@
 import 'sass-reset';
+import "./Main.scss"
+import Header from "./Components/Header/Header.jsx";
 
 function App() {
 
   return (
     <>
       <section id="center">
-        <h1>Pet Ledger</h1>
+        <Header />
       </section>
     </>
   )
