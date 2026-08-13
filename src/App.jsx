@@ -1,6 +1,7 @@
 import 'sass-reset';
 import "./Main.scss"
 import Header from "./Components/Header/Header.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <section id="center">
         <Header />
+          <Footer />
       </section>
     </>
   )
