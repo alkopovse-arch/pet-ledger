@@ -1,12 +1,15 @@
 @use "../../styles/common";
 
 .footer{
+  padding: 20px;
+  background: common.$color-white;
+  border-top: 1px solid common.$color-border;
   text-align: center;
 
 
   p {
     font-size: 1rem;
-    padding: 10px;
+    color: common.$color-text-muted;
     margin: 0;
 
   }
