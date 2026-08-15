@@ -3,7 +3,11 @@ import "./Header.scss";
 const Header = ( children ) => {
     return (
         <header className="header">
-            <h1>Pet Ledger</h1>
+            <div className="header__container">
+                <div className="header__logo">
+                    Pet Ledger
+                </div>
+            </div>
         </header>
     )
 }
