@@ -1,32 +1,6 @@
 {
   "pets": [
     {
-      "id": "1",
-      "name": "Max",
-      "species": "Dog",
-      "breed": "Golden Retriever",
-      "dateOfBirth": "2022-05-14",
-      "notes": "Very friendly and loves playing outside.",
-      "vetChecks": [
-        {
-          "id": "1",
-          "date": "2026-04-10",
-          "reason": "Annual check-up",
-          "notes": "Everything looks healthy.",
-          "nextAppointment": "2027-04-10"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Flekica",
-      "species": "Cat",
-      "breed": "British Shorthair",
-      "dateOfBirth": "2024-01-20",
-      "notes": "Indoor cat. Likes sleeping on the sofa.",
-      "vetChecks": []
-    },
-    {
       "name": "Yuna",
       "species": "Cat",
       "breed": "Mixed",
@@ -42,6 +16,61 @@
         }
       ],
       "id": "MApobbvHGcw"
+    },
+    {
+      "name": "Sisi",
+      "species": "Cat",
+      "breed": "Mixed",
+      "dateOfBirth": "2011-05-02",
+      "notes": "Loves her food =)",
+      "vetChecks": [
+        {
+          "id": "1787666757621",
+          "date": "2012-06-25",
+          "reason": "Sterilisation",
+          "notes": "",
+          "nextAppointment": ""
+        }
+      ],
+      "id": "BVPRNQBzKas"
+    },
+    {
+      "name": "Nanako",
+      "species": "Dog",
+      "breed": "Mixed",
+      "dateOfBirth": "2018-05-07",
+      "notes": "Fly over stairs",
+      "vetChecks": [
+        {
+          "id": "1787667112713",
+          "date": "2018-06-26",
+          "reason": "First vaccination",
+          "notes": "",
+          "nextAppointment": "2018-07-26"
+        },
+        {
+          "id": "1787667211118",
+          "date": "2018-07-26",
+          "reason": "Next vaccination",
+          "notes": "",
+          "nextAppointment": "2018-08-26"
+        },
+        {
+          "id": "1787667249337",
+          "date": "2018-08-29",
+          "reason": "Next vaccination",
+          "notes": "",
+          "nextAppointment": "2019-08-29"
+        },
+        {
+          "id": "1787667382282",
+          "date": "2018-09-15",
+          "reason": "Rabis vaccination",
+          "notes": "",
+          "nextAppointment": "2019-09-15"
+        }
+      ],
+      "id": "k2o6hmwPVlk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
