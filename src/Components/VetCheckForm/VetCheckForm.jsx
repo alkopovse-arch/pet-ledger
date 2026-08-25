@@ -88,7 +88,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
 
                 <button
                     type="button"
-                    className="vet-check-form__button"
+                    className="vet-check-form__close"
                     onClick={onCancel}
                 >
                     x
@@ -148,7 +148,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
                     />
                 </div>
 
-                <div className="vet-check-form__action">
+                <div className="vet-check-form__actions">
                     <button
                         type="button"
                         className="vet-check-form__cancel"
