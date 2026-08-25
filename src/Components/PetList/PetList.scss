@@ -1,0 +1,68 @@
+@use "../../styles/common";
+
+.pet-list {
+  min-width: 0;
+
+  .pet-list__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0 0 4px;
+      font-size: 1.375rem;
+      color: common.$color-text;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.8125rem;
+      color: common.$color-text-muted;
+    }
+  }
+
+  .pet-list__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: common.$color-primary-light;
+    color: common.$color-primary-dark;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .pet-list__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .pet-list__empty {
+    padding: 50px 20px;
+    background: common.$color-white;
+    border: 1px dashed #cccccc;
+    border-radius: 10px;
+    text-align: center;
+
+    h3 {
+      margin: 0 0 8px;
+      color: common.$color-text-dark;
+    }
+
+    p {
+      margin: 0;
+      color: common.$color-text-muted;
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .pet-list__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
