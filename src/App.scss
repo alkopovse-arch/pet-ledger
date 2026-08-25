@@ -1,0 +1,51 @@
+@use "styles/common";
+@use "normalize.scss";
+
+.app {
+  min-height: calc(100vh - 70px);
+  padding: 40px 20px;
+  background: common.$color-background;
+
+  .app__container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  .app__intro {
+    margin-bottom: 30px;
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      color: common.$color-text;
+    }
+
+    p {
+      margin: 0;
+      color: common.$color-text-muted;
+      font-size: 1rem;
+    }
+  }
+
+  .app__layout {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+
+  .app__Loading {
+    padding: 40px;
+    background: common.$color-white;
+    border-radius: 10px;
+    text-align: center;
+    color: common.$color-text-muted;
+  }
+
+  @media (max-width: 850px) {
+    .app__layout {
+      grid-template-columns: 1fr;
+    }
+  }
+}
