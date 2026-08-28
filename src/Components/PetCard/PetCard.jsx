@@ -2,6 +2,7 @@ import {useState} from "react";
 import VetCheckForm from "../VetCheckForm/VetCheckForm.jsx";
 import "./PetCard.scss";
 
+//Calculate age
 const calculateAge = (dateOfBirth) => {
     if (!dateOfBirth) {
         return null;
@@ -17,6 +18,7 @@ const calculateAge = (dateOfBirth) => {
     return age;
 };
 
+//Format date to display
 const formatDate = (date) => {
     if (!date) {
         return "Not specified";
@@ -26,10 +28,13 @@ const formatDate = (date) => {
 };
 
 const PetCard = ({ pet, onPetUpdated }) => {
+
+    //Control if vet check form visible
     const [showVetForm, setShowVetForm] = useState(false);
 
     const age = calculateAge(pet.dateOfBirth);
 
+    //Handle adding vet check
     const handleVetCheckAdded = (updatedPet) => {
         onPetUpdated(updatedPet);
         setShowVetForm(false);

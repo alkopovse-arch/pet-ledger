@@ -7,14 +7,17 @@ import PetForm from "./Components/PetForm/PetForm.jsx";
 import PetList from "./Components/PetList/PetList.jsx";
 import "./App.scss";
 
+//Main app
 const App = () => {
     const [pets, setPets] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    //Fetch data when app starts
     useEffect(() => {
             void fetchPets();
         }, []);
 
+    //Get pets from backend
     const fetchPets = async () => {
         try {
             const response = await fetch("http://localhost:3000/pets");
@@ -27,10 +30,12 @@ const App = () => {
         }
     };
 
+    //Add pet
     const handlePetAdded = (newPet) => {
         setPets((previousPets) => [...previousPets, newPet]);
     };
 
+    //Update pet
     const handlePetUpdated = (updatedPet) => {
         setPets((previousPets) =>
             previousPets.map((pet) =>

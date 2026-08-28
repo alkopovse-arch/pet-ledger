@@ -3,6 +3,8 @@ import {useState} from "react";
 import "./PetForm.scss";
 
 const PetForm = ({onPetAdded}) => {
+
+    //Form data
     const [formData, setFormData] = useState({
         name: "",
         species: "",
@@ -13,12 +15,14 @@ const PetForm = ({onPetAdded}) => {
 
     const [saving, setSaving] = useState(false);
 
+    //Handel from input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
 
         setFormData((previous) => ({ ...previous, [name]: value }));
     };
 
+    //Handel form submit
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -29,6 +33,7 @@ const PetForm = ({onPetAdded}) => {
         setSaving(true);
 
         try {
+            //Creat object that is sent to backend
             const pet = {
                 name: formData.name,
                 species: formData.species,
@@ -58,6 +63,7 @@ const PetForm = ({onPetAdded}) => {
 
             onPetAdded(newPet);
 
+            //Reset form
             setFormData({
                 name: "",
                 species: "",

@@ -2,6 +2,8 @@ import {useState} from "react";
 import "./VetCheckForm.scss";
 
 const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
+
+    //Form data
     const [formData, setFormData] = useState({
         date: "",
         reason: "",
@@ -11,11 +13,13 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
 
     const [saving, setSaving] = useState(false);
 
+    //Handle form change
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    //Handle form submit
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -26,6 +30,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
         setSaving(true);
 
         try {
+            //Get selected pet from backend
             const petResponse = await fetch(`http://localhost:3000/pets/${petId}`);
 
             if (!petResponse.ok) {
@@ -34,6 +39,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
 
             const pet = await petResponse.json();
 
+            //Creat new vet check
             const newVetCheck = {
                 id: Date.now().toString(),
                 date: formData.date,
@@ -47,6 +53,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
                 vetChecks: [...(pet.vetChecks || []), newVetCheck],
             };
 
+            //Save updated pet to backend
             const response = await fetch(`http://localhost:3000/pets/${petId}`,
                 {
                     method: "PUT",
@@ -65,6 +72,7 @@ const VetCheckForm = ({petId, onVetCheckAdded, onCancel}) => {
 
             onVetCheckAdded(savedPet);
 
+            //Reset form
             setFormData({
                 date: "",
                 reason: "",
